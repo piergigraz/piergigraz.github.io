@@ -1,0 +1,48 @@
+body{
+	margin:0;
+	background: url(https://anotherbcn.com/wp-content/uploads/2018/02/cafeteria-barcelona-bond-cafe.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+		font-family: sans-serif;
+
+}
+
+button {
+	margin-top:50px;
+	padding:20px;
+	border-radius: 5px;
+	font-size: 3em;
+	font-weight: bold;
+	background-color: rgba(255,20,34,0.6);
+	cursor: pointer;
+	border: 2px solid black;
+
+}
+
+.container {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+
+}
+
+.content{
+}
+
+#demo {
+	border-radius: 0 0 15px 15px;
+	border: 1px solid black;
+	border-top:2px dashed black;
+	color:black;
+	font-weight: bold;
+	font-family: Bradley Hand, cursive;
+	font-size: 1.2em;
+	padding:20px;
+	margin-right:0px;
+	height: 60vh;
+	width:50vh;
+	background:url("https://ecdn.teacherspayteachers.com/thumbitem/Lined-Paper-Full-page-and-half-page-2917226-1556323836/original-2917226-3.jpg");
+	background-size: cover;
+
+}

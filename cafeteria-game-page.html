@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Play the Cafeteria Memory game</title>
+
+<link rel="stylesheet" type="text/css" href="cafeteria-style.css">
+</head>
+<body>
+
+<div class="container">
+	<div class="content"><button onclick="service()">Order here</button></div>
+	<div class="content"><p id="demo"></p></div>
+</div>
+<!-- Il Javascript da fonte esterna rende illegibili le lettere accentate-->
+<!--script type="text/javascript" src="cafeteria-memory-forHTML.js"></script-->
+
+<script>
+	var bebida = ["cafeSolo","cafeConLeche","cortado"];
+var cafeina = ["normal","descafeinado"];
+var leche = ["normal","desnadada","sin lactosa","soja"];
+var taza=["normal","vaso"];
+var azucar=["normal","sacarina","morena"];
+var temp=["leche a temperatura natural","leche bien calientita eh"];
+
+var cafeConLeche = {
+cafe:cafeina,
+leche:leche,
+taza:taza,
+azucar:azucar,
+temp:temp,
+};
+
+var cafeSolo = {
+cafe:cafeina,
+azucar:azucar,
+
+};
+var cortado = {
+cafe:cafeina,
+leche:leche,
+azucar:azucar,
+
+};
+
+var j = 0;
+var orderOne =[];
+var orderTwo =[];
+var orderThree =[];
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min+1)); //Il max è escluso e il min è incluso
+}
+
+function getRandomOrder() {
+	var randomAzucar = getRandomInt(0,2);
+	var randomLeche = getRandomInt(0,3);
+	var randomCafeina = getRandomInt(0,1);
+	var i = getRandomInt(0,2);
+	var actualOrder = bebida[i];
+	if (actualOrder === "cafeSolo"){
+		 orderOne.push("Prepara un café solo " + 
+		cafeSolo.cafe[randomCafeina] + ", con azucar " + cafeSolo.azucar[randomAzucar]);
+	}else if(actualOrder === "cortado"){
+				 orderTwo.push("Prepara un cortado " + cortado.cafe[randomCafeina] +
+				 ", con azucar " + cortado.azucar[randomAzucar]);
+
+	}else if (actualOrder === "cafeConLeche"){
+			 orderThree.push("Prepara un cafè con leche con café " + cafeConLeche.cafe[randomCafeina] 
+				+ ", con azucar " + cafeConLeche.azucar[randomAzucar]+
+				 ", con leche " + cafeConLeche.leche[randomLeche] + " "
+				+ cafeConLeche.temp[randomCafeina] 
+				+ ", en taza " + cafeConLeche.taza[randomCafeina]);
+			
+	}
+// Magari introduco questa linea quando l'app sarà temporizzata,
+// gli ordini arriveranno autonomicamente e nel tempo di attesa verrà visualizzata la frase
+//	else alert("aprovecha de tu tiempo para limpiar platos!!") ;
+
+}
+
+function service(){
+for (j=0; j<getRandomInt(1,6); j++){
+	getRandomOrder();
+	if (orderOne[j] === undefined){
+		orderOne[j] = "Què esperas ?? Limpia los platos!";
+	} else if (orderTwo[j] === undefined){
+		orderTwo[j] = "Te pago para mirar por el cielo, eh ?!? Limpia los platos!";
+	} else if (orderThree[j] === undefined){
+		orderThree[j] ="Crees que no te veo ?! Nunca tienes que pararte..!! Italiano sin ganas de trabajar!";
+	} else document.getElementById("demo").innerHTML = (orderOne[j] + "<br>" + orderTwo[j] + "<br>" + orderThree[j]);
+
+	}
+
+}
+
+
+</script>
+
+</body>
+</html>

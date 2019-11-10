@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shopping list</title>
+	<style>
+		input{
+			padding:10px;
+			right:50vw;
+			min-width:150px;
+			color:black;
+			background-color: rgba(20,205,100,0.2);
+			margin:10px;
+			border-radius: 10px;
+			border:0px;
+			border-bottom: 1px solid grey;
+		}	
+		input:focus{
+			outline: none;
+			font-size: 1.1em;
+		}
+		button {
+			padding:10px;
+			font-size: 1.2em;
+			border-radius: 10px;
+			max-width: 70px;
+			align-self: center;
+		}
+		.container {
+			display:flex;
+			flex-direction: column;
+			width:50vw;
+			height:50vh;
+			position: absolute;
+			top:0px;
+			left:0px;
+			right:0px;
+			bottom:0px;
+			margin:auto;
+		}
+		.push{
+			position: relative;
+			padding:50px;
+		}
+
+		li {
+			font-size: 1.2em;
+		}
+
+				
+		.deleteBtn {
+			padding : 2px;
+			float: right;
+			background-color: red;
+			font-size: 0.6em;
+		}
+
+		ul {
+			font-family: cursive, bold;
+		}
+
+		.done {
+			color:red;
+			text-decoration: line-through;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="push"></div>
+		<h1>Consigli di mamma per il 1 Novembre</h1>
+<input id="userinput" type="text" placeholder="Enter an item" ></input>
+<button id="enter">Enter</button>
+<ul></ul>
+</div>
+<script type="text/javascript" src="lista-spesa.js">
+	
+// var button = document.getElementById('enter');
+// var input = document.getElementById("userinput");
+// var ul = document.querySelector('ul');
+
+// function makeAList (){
+// 	var li = document.createElement('li');
+// 	li.appendChild(document.createTextNode(input.value));
+// 	ul.appendChild(li);
+// 	input.value = '';
+// 	li.classList.add ("itemlist");
+// }
+
+// button.addEventListener ('click' , function (){
+// 	if (input.value != ''){
+// 	makeAList();
+// 	}
+// })
+
+// input.addEventListener ('keydown' , function (e){
+// 	if(e.code === "Enter" && input.value != ''){
+// 		makeAList();
+// 	}
+// })	
+ 
+// document.getElementsbyTagName('li').onclick = function itemDone(){
+// 		li.classList.add ("done");
+// }
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

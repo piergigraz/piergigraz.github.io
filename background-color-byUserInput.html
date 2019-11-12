@@ -1,0 +1,55 @@
+
+<html>
+  <head>
+  	<style type="text/css">
+  		#body {
+  background-color:rgba(234,543,24,0.6);
+}
+button {
+	padding:30px;
+	font-size: 2em;
+	color:black;
+	border-radius: 5px;
+	background-color: rgba(255,255,255,0.6);
+	border:3px dashed black;
+	position: fixed;
+	margin-top: 30px;
+}
+.container {
+	display: flex;
+	width:100%;
+	justify-content: space-around;
+}
+  	</style>
+     <title>Background generator</title>
+
+  </head>
+  <body id="target">
+    <div class='container'>
+    <button id="btn"> Change color </button> </div>
+  </body>
+</html>
+
+<script type="text/javascript">
+	
+// the idea is to generate 3 random numbers
+//and place them on the css value of the propriety background-color.
+// es. rgb (rOne,rTwo,rThree);
+
+var body = document.getElementById('body');
+
+
+function getRandomNum (){
+  var r = Math.random()*245;
+  r = Math.round(r);
+  return r;
+};
+
+var style = document.createElement("style");
+document.head.appendChild(style);
+function InsertNewColor(){
+		style.innerHTML = '#target {background-color: rgb('+getRandomNum()+','+getRandomNum()+','+getRandomNum()+');}';
+	}
+var button = document.getElementById('btn');
+button.addEventListener('click', InsertNewColor);
+</script>

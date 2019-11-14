@@ -1,55 +1,51 @@
-
+<!DOCTYPE html>
 <html>
-  <head>
-  	<style type="text/css">
-  		#body {
-  background-color:rgba(234,543,24,0.6);
-}
-button {
-	padding:30px;
-	font-size: 2em;
-	color:black;
-	border-radius: 5px;
-	background-color: rgba(255,255,255,0.6);
-	border:3px dashed black;
-	position: fixed;
-	margin-top: 30px;
-}
-.container {
-	display: flex;
-	width:100%;
-	justify-content: space-around;
-}
-  	</style>
-     <title>Background generator</title>
+<head>
+	<title>Background Generator by user input</title>
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
-  </head>
-  <body id="target">
-    <div class='container'>
-    <button id="btn"> Change color </button> </div>
-  </body>
-</html>
-
-<script type="text/javascript">
-	
-// the idea is to generate 3 random numbers
-//and place them on the css value of the propriety background-color.
-// es. rgb (rOne,rTwo,rThree);
-
-var body = document.getElementById('body');
-
-
-function getRandomNum (){
-  var r = Math.random()*245;
-  r = Math.round(r);
-  return r;
-};
-
-var style = document.createElement("style");
-document.head.appendChild(style);
-function InsertNewColor(){
-		style.innerHTML = '#target {background-color: rgb('+getRandomNum()+','+getRandomNum()+','+getRandomNum()+');}';
+	body {
+		text-align:center;
+		margin-top:50px;
+		background: linear-gradient(to right, #ffa056, #77ffed);
+		text-shadow: -1px -1px rgba(0,0,0,0.3);
 	}
-var button = document.getElementById('btn');
-button.addEventListener('click', InsertNewColor);
-</script>
+	input {
+		border:2px solid white;
+		width:50px;
+		margin:5px;
+
+	}
+
+	h1,h2{
+		letter-spacing: 3px;
+		text-transform: uppercase;
+		padding:10px;
+		color:rgba(255,255,255,0.85);
+	}
+
+	h3{
+		color:white;
+		text-shadow: 1px 1px #000, -1px -1px #000, 0px -1px #000;
+		font-family: Open Sans, Roboto, Montserrat, Verdana;
+
+
+	}
+</style>
+
+
+</head>
+<body id="gradient">
+
+<h1>background generator</h1>
+
+<input type="color" name="color1" id="colorOne" value="#ffa056">
+<input type="color" name="color2" id="colorTwo" value="#77ffed">
+
+<h2>current CSS background</h2>
+<h3></h3>
+
+<script type="text/javascript" src="color-userinput.js"></script>
+	</body>
+</html>
